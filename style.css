@@ -1,0 +1,506 @@
+:root {
+    --bg: #0b0b0b;
+    --card: #111111;
+    --gold: #d4a72c;
+    --muted: #b8a97a;
+    --radius: 10px;
+    --trans: 220ms;
+}
+
+/* Reset & Base */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: #ffffff;
+    font-family: Inter, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Header */
+.site-header {
+    background: #000;
+    border-bottom: 1px solid #ffffff;
+    /* position:fixed;
+    z-index: 100;
+    width: 100%; */
+
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.6rem 0;
+
+}
+
+.brand {
+    color: var(--gold);
+    font-weight: 700;
+    font-size: 1.25rem;
+    text-decoration: none;
+}
+
+.site-nav a {
+    color: var(--muted);
+    text-decoration: none;
+    margin-left: 1rem;
+    padding: 0.2rem 0.4rem;
+}
+
+.site-nav a:hover {
+    color: var(--gold);
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform var(--trans), background var(--trans), color var(--trans);
+}
+
+.btn-primary {
+    background: var(--gold);
+    color: #000;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+}
+
+.btn-outline:hover {
+    transform: translateY(-2px);
+}
+
+/* HERO (background image only for this section) */
+/* Replace YOUR-IMAGE-LINK-HERE with your image URL */
+.hero {
+    background:
+        linear-gradient(0deg, rgba(0,0,0,.6), rgba(0,0,0,.35)),
+        url("https://i.pinimg.com/1200x/78/50/c4/7850c4658e0966b1d9fd2f6e8e9b12a6.jpg") center/cover no-repeat;
+    padding: 3.6rem 0;
+    transition: background 300ms ease;
+}
+
+.hero h1 {
+    color: var(--gold);
+    font-size: 2.4rem;
+    margin: 0 0 0.4rem 0;
+}
+
+.lead {
+    color: #ffffff;
+    opacity: 0.9;
+    margin-bottom: 1rem;
+}
+
+/* Grid Helpers */
+.grid {
+    display: grid;
+    gap: 1rem;
+}
+
+.cards-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.cards-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* Cards */
+.card,
+.service,
+.trainer-card,
+.price-card {
+    background: var(--card);
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+.image-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-overlay {
+    padding: 0.8rem;
+    background: linear-gradient(0deg, rgba(0,0,0,.6), rgba(0,0,0,.15));
+}
+
+.card-overlay h3 {
+    color: var(--gold);
+    margin: 0;
+}
+
+/* Services */
+.service {
+    padding: 1rem;
+    text-align: left;
+}
+
+.service h4 {
+    margin: 0.4rem 0 0.2rem 0;
+}
+
+.service .muted {
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+/* Areas (plain <img> used) */
+.areas-grid {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.area-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
+
+.p-head {
+    padding: 0.8rem;
+}
+
+/* Pricing CTA */
+.pricing-cta {
+    background: #000;
+    border-top: 1px solid var(--gold);
+    border-bottom: 1px solid #ffffff;
+    padding: 1.2rem 0;
+}
+
+.pricing-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Pricing modern */
+.pricing-modern {
+    padding: 2rem 0;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.2rem;
+}
+
+.p-card {
+    background: #fff;
+    color: #111;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    min-height: 320px;
+}
+
+.p-head {
+    background: #0c1733;
+    padding: 1rem;
+    text-align: center;
+    color: #fff;
+    position: relative;
+}
+
+.p-features {
+    list-style: none;
+    padding: 1rem;
+    margin: 0;
+    flex: 1 1 auto;
+}
+
+.p-features li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0.35rem 0;
+    font-size: 0.95rem;
+    color: #333333;
+}
+
+.p-features li.yes::before {
+    content: "✔";
+    display: inline-block;
+    width: 20px;
+    color: #0d6efd;
+    font-weight: 700;
+    text-align: center;
+}
+
+.p-features li.no::before {
+    content: "✖";
+    display: inline-block;
+    width: 20px;
+    color: #c73434;
+    font-weight: 700;
+    text-align: center;
+}
+
+/* Enquire button */
+.p-btn {
+    width: calc(100% - 2rem);
+    margin: 1rem;
+    background: #ffcc00;
+    color: #000;
+    border: none;
+    padding: 0.7rem;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background var(--trans), transform var(--trans);
+}
+
+.p-btn:hover {
+    background: #e6b800;
+    transform: translateY(-2px);
+}
+
+/* Newsletter */
+.newsletter {
+    background: #111;
+    padding: 1.2rem 0;
+    border-top: 1px solid var(--gold);
+    border-bottom: 1px solid #ffffff;
+    margin-top: 1.4rem;
+}
+
+.newsletter-inner {
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.nl-text h3 {
+    margin: 0;
+    color: var(--gold);
+}
+
+.nl-form {
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+}
+
+.nl-form input {
+    padding: 0.6rem;
+    border-radius: 8px;
+    border: 1px solid rgba(212,167,44,0.12);
+    background: #000;
+    color: #fff;
+}
+
+/* Footer */
+.site-footer {
+    background: #000;
+    padding: 2rem 0 1.2rem 0;
+    border-top: 1px solid var(--gold);
+}
+
+.footer-inner.three-cols {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    align-items: start;
+}
+
+.footer-col h4 {
+    color: var(--gold);
+    margin: 0 0 0.5rem 0;
+    font-size: 1rem;
+}
+
+.footer-col p {
+    color: var(--muted);
+    margin: 0;
+}
+
+.footer-nav a {
+    color: var(--muted);
+    text-decoration: none;
+    margin-right: 1rem;
+}
+
+.footer-nav a:hover {
+    color: var(--gold);
+}
+
+/* Social icons */
+.icons-row {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.social-link {
+    width: 38px;
+    height: 38px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--card);
+    color: var(--muted);
+    border-radius: 10px;
+    border: 1px solid rgba(212,167,44,0.18);
+    font-size: 16px;
+    text-decoration: none;
+    transition: var(--trans);
+}
+
+.social-link:hover {
+    background: rgba(212,167,44,0.12);
+    color: var(--gold);
+    transform: scale(1.05);
+}
+
+
+/* ===========================================
+   TRAINERS INTRO SECTION
+=========================================== */
+
+.trainers-intro {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 1.6rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  margin-bottom: 2rem;
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(4px);
+}
+
+/* Intro Heading */
+.trainers-intro h2 {
+  color: var(--gold);
+  margin-bottom: 0.8rem;
+  font-size: 1.7rem;
+  letter-spacing: 0.5px;
+}
+
+/* Intro Text */
+.trainers-intro p {
+  color: var(--muted);
+  line-height: 1.55;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+/* Intro List */
+.trainers-intro ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.trainers-intro ul li {
+  margin-bottom: 0.45rem;
+  color: #ddd;
+  font-size: 0.95rem;
+}
+
+/* Gold bullets */
+.trainers-intro ul li::marker {
+  color: var(--gold);
+}
+
+/* ===========================================
+   MEET THE TRAINERS — CARDS GRID
+=========================================== */
+
+.trainers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+/* Trainer Card Container */
+.trainer-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Card Hover */
+.trainer-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.7);
+}
+
+/* Image */
+.trainer-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Card Body */
+.trainer-info {
+  padding: 1rem;
+}
+
+/* Trainer Name */
+.trainer-name {
+  color: var(--gold);
+  margin: 0 0 0.3rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* Trainer Role */
+.trainer-role {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+/* Trainer Bio */
+.trainer-bio {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  color: #cfcfcf;
+}
+
+/* Buttons inside card */
+.trainer-info .btn-outline {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.trainer-info .btn-outline:hover {
+  background: var(--gold);
+  color: #000;
+}
+
